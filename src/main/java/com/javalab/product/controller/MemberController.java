@@ -52,6 +52,7 @@ public class MemberController {
                              PageRequestDTO pageRequestDTO,
                              Model model) {
         model.addAttribute("member", new Member());
+      
     }
 
     @PostMapping("/register")

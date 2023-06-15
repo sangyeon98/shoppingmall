@@ -16,21 +16,24 @@ public interface MemberService {
     void modify(MemberDTO memberDTO);
     boolean remove(String email);
 
+    
+    //컨트롤러에서 넘어돈 DTO를 Entity로 바꿔주는 역할 
     default Member dtoToEntity(MemberDTO memberDTO) {
         return Member.builder()
                 .email(memberDTO.getEmail())
                 .password(memberDTO.getPassword())
+                .address(memberDTO.getAddress())
                 .name(memberDTO.getName())
                 .build();
     }
 
+    //데이터베이스에서 받아온 Entity를 DTO로 바꿔주는 역할
     default MemberDTO entityToDto(Member member) {
         return MemberDTO.builder()
                 .email(member.getEmail())
                 .password(member.getPassword())
-                .address(member.getAddress())
                 .name(member.getName())
-                .regDate(member.getRegDate())
+                .address(member.getAddress())
                 .build();
     }
 }
