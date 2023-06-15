@@ -1,0 +1,22 @@
+
+	    <!-- 왼쪽 Sidebar start -->
+	    <div th:fragment="sidebarFragment" class="bg-light border-right" id="sidebar-wrapper">
+	        <div class="sidebar-heading">Start Bootstrap </div>
+	        <div class="list-group list-group-flush">
+	            <a href="#" th:href="@{/category/list}" class="list-group-item list-group-item-action bg-light">
+					카테고리(Category)
+				</a>
+	            <a href="#" th:href="@{/product/list}" class="list-group-item list-group-item-action bg-light">
+					상품(Product)
+				</a>
+	            <a href="#" th:href="@{/member/list}" class="list-group-item list-group-item-action bg-light">
+					회원(Member)
+				</a>
+	            <a href="#" th:href="@{/order/list}" class="list-group-item list-group-item-action bg-light">
+					주문(Order)
+				</a>
+	            <a href="#" class="list-group-item list-group-item-action bg-light">고객센터</a>
+	        </div>
+	    </div>
+	    <!-- sidebar-end -->
+	

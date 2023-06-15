@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout/layout2}">
+    <div layout:fragment="content" class="container my-3">
+        <h1 class="mt-4">orderMaster Details</h1>
+        
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>주문 ID:</th>
+                    <td th:text="${orderMaster.orderId}"></td>
+                </tr>
+                <tr>
+                    <th>주문자 성명:</th>
+                    <td th:text="${orderMaster.name}"></td>
+                </tr>
+                <tr>
+                    <th>배송지 주소:</th>
+                    <td th:text="${orderMaster.address}"></td>
+                </tr>
+                <tr>
+                    <th>주문 총금액:</th>
+                    <td th:text="${orderMaster.totalAmt}"></td>
+                </tr>
+                <tr>
+                    <th>주문일:</th>
+                    <td th:text="${#temporals.format(orderMaster.regDate, 'yyyy/MM/dd')}"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a th:href="@{/order/list}">
+            <button type="button" class="btn btn-outline-primary">Back to List</button>
+        </a>
+        <a th:href="@{/order/modify(orderId = ${orderMaster.orderId})}">
+            <button type="button" class="btn btn-outline-success">Modify</button>
+        </a>       
+		<a th:href="@{/order/delete/{orderId}(orderId=${orderMaster.orderId})}">
+		    <button type="button" class="btn btn-outline-warning">Delete</button>
+		</a>
+    
+        
+    </div>
+</html>
